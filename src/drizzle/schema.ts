@@ -8,7 +8,8 @@ export const bookTable = pgTable('bookTable', {
     author: text('author').notNull(),
     year: integer('year').notNull(),
     
+    
 });
 
 export type TIBook = typeof bookTable.$inferInsert;
-export type TSBookSelect = typeof bookTable.$inferSelect;
+export type TSBook = typeof bookTable.$inferSelect;

@@ -9,6 +9,7 @@
 .idea/shelf
 
 # deps
+dist/
 node_modules/
 
 # build
@@ -29,3 +30,4 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+

@@ -9,7 +9,6 @@ import { bookRouter } from './books/book.router';
 const app = new Hono();
 const {printMetrics, registerMetrics} = prometheus()
 
-//3rd party middleware
 app.use('*', registerMetrics)
 app.use('*', cors())
 app.use(
@@ -23,9 +22,13 @@ app.use(
     credentials: true,
   })
 )
-//default routes
+
+
+
+
+
 app.get('/', (c) => {
-  return c.text('The server is running 🚀🚀 ')
+  return c.text('The server is running ')
 })
 app.notFound((c) => {
   return c.text('Route Not Found', 404)
@@ -33,7 +36,7 @@ app.notFound((c) => {
 app.get('/metrics', printMetrics)
 
 
-//custom routes
+
 app.route("/",bookRouter)
 
 console.log("Server is running on port " + process.env.PORT || 3000)

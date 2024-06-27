@@ -41,4 +41,3 @@ export const authMiddleware = async (c: Context  & { req: HonoRequest<any, unkno
 export const adminRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "admin")
 export const userRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "user")
 export const bothRolesAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "both")
-export const driverRoleAuth = async (c: Context, next: Next) => await authMiddleware(c, next, "driver")

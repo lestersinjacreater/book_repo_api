@@ -1,6 +1,6 @@
 {
-  "id": "9d8a6fb3-cc4a-4433-8af6-eba1e2795f5a",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "e9fa9b7c-f830-447d-8163-8ed3618755c3",
+  "prevId": "9d8a6fb3-cc4a-4433-8af6-eba1e2795f5a",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -23,12 +23,6 @@
         "author": {
           "name": "author",
           "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "year": {
-          "name": "year",
-          "type": "integer",
           "primaryKey": false,
           "notNull": true
         }

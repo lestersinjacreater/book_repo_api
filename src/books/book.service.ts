@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import db from "../drizzle/db";
 
-import { TIBook, TSBookSelect, bookTable } from "../drizzle/schema";
+import { TIBook, TSBook, bookTable } from "../drizzle/schema";
 
 //function to add book
 //export const addBookService = async (book: TIBook) => {
@@ -10,12 +10,12 @@ import { TIBook, TSBookSelect, bookTable } from "../drizzle/schema";
 //}
 
 //function to get all books
-export const booksService = async ():Promise<TSBookSelect[] | null>=> {
+export const booksService = async ():Promise<TSBook[] | null>=> {
     return await db.query.bookTable.findMany();    
 }
 
 //function to get book by id
-export const getBookByIdService = async (id:number):Promise<TSBookSelect | undefined> => {
+export const getBookByIdService = async (id:number):Promise<TSBook | undefined> => {
     return await db.query.bookTable.findFirst({
        where: eq(bookTable.book_id, id)
     })
@@ -32,7 +32,7 @@ export const insertBookService = async (book: TIBook) => {
         const createdBook = result[0];
         return createdBook;
     } else {
-        throw new Error("Failed to insert book");
+        throw new Error("insertion failed");
     }
 }
 
