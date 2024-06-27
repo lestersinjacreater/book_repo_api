@@ -1,1 +1,0 @@
-ALTER TABLE "bookTable" DROP COLUMN IF EXISTS "year";
