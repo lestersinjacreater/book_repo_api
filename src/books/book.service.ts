@@ -49,5 +49,59 @@ export const deleteBookService = async(id:number) => {
     return "Book deleted "
 }
 
+                  //title
+
+
+//function to get all books by title
+export const getAllBooksByTitleService = async (title: string): Promise<TSBook[] | null> => {
+    return await db.query.bookTable.findMany({
+        where: eq(bookTable.title, title)
+    });
+}                  
+
+
+//function to get book by title
+export const getBookByTitleService = async (title:string):Promise<TSBook | undefined> => {
+    return await db.query.bookTable.findFirst({
+       where: eq(bookTable.title, title)
+    })
+}    
+
+
+            
+               //author
+
+
+// function to get all books by author
+export const getAllBooksByAuthorService = async (author: string): Promise<TSBook[] | null> => {
+    return await db.query.bookTable.findMany({
+        where: eq(bookTable.author, author)
+    });
+}
+//function to get book by author
+export const getBookByAuthorService = async (author:string):Promise<TSBook | undefined> => {
+    return await db.query.bookTable.findFirst({
+       where: eq(bookTable.author, author)
+    })
+}
+       //year
+
+
+
+       //function to get book by year
+export const getBookByYearService = async (year:number):Promise<TSBook | undefined> => {
+    return await db.query.bookTable.findFirst({
+       where: eq(bookTable.year, year)
+    })
+}
+
+//function to get all books by year
+export const getAllBooksByYearService = async (year: number): Promise<TSBook[] | null> => {
+    return await db.query.bookTable.findMany({
+        where: eq(bookTable.year, year)
+    });
+}
+
+
 
 

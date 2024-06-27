@@ -1,0 +1,67 @@
+//book api
+
+
+//add a new book
+###
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "title": "deererrgyjh",
+    "author": "Paulo Coelho",
+    "year": 2000
+}
+
+
+//update a book
+###
+PUT http://localhost:3000/books/1
+Content-Type: application/json
+
+{
+    "title": "The Alchemist Updated"
+}
+
+//delete a book
+###
+DELETE http://localhost:3000/books/1
+
+
+//get all books
+###
+GET http://localhost:3000/books
+
+
+//get a book by id
+###
+GET http://localhost:3000/book/12
+
+
+
+//get a book by title
+###
+GET http://localhost:3000/book/title/The Alchemist
+
+//get a book by author
+###
+GET http://localhost:3000/book/author/Paulo Coelho
+
+
+//get a book by year
+###
+GET http://localhost:3000/book/year/1988
+
+
+//get all books by author
+###
+GET http://localhost:3000/books/author/Paulo Coelho
+
+//get all books by year
+###
+GET http://localhost:3000/books/year/2000
+
+//get all books by title
+###
+GET http://localhost:3000/books/title/Alchemist
+
+
